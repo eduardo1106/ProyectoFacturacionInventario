@@ -1,0 +1,48 @@
+{%extends 'base.html' %}
+{% block listaproveedor %}
+{% load static %}
+{% csrf_token %}
+
+<div class="row fila1  mb-1 mt-2" >
+    <div class ="col-1 columna1 rounded ">
+  </div> 
+
+ <div class ="col-8 columna2 rounded ">
+  <form class="form-inline my-2 my-lg-6" method="GET">
+      <input class="form-control mr-sm-2" type="text" name="buscar" placeholder="Buscar Clientes..">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button> 
+  </form>
+  </div>
+</div>
+<table class="table table-bordered "style="background-image:url({% static 'img/fondobusqueda.jpg'%});">
+<thead>
+    <tr>
+        <td><b>Código</b></td>
+        <td><b>Nombre</b></td>
+        <td><b>Apellido</b></td>
+        <td><b>Dirección</b></td>
+        <td><b>Numero Nit</b></td>
+        <td><b>Telefono</b></td>
+        <td><b>Acción</b></td>
+    </tr>
+    {% if persona %}
+       {% for personas in persona %}  
+     <tr>
+        <td>{{personas.id}}</td>
+        <td>{{personas.nombre_persona}}</td>
+        <td>{{personas.apellido_persona}}</td>
+        <td>{{personas.direccion_persona}}</td>
+        <td>{{personas.nit_persona}}</td>
+        <td>{{personas.telefono_persona}}</td>
+        
+        <td>
+          <a class= "btn btn-secondary" href="{% url 'editar_clientes' personas.id %}">Modificar</a>
+        </td> 
+      </tr>
+           {% endfor %}
+    {% else %}
+      <h1> No hay registros de solicitudes </h1>
+    {% endif %} 
+</tbody>
+</table>
+{% endblock %}

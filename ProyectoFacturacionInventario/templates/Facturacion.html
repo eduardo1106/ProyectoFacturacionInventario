@@ -1,0 +1,109 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block crearfacturas %}
+
+    <form method="POST">
+        {% csrf_token %}
+        <div class="card card-primary">
+            <div class="card-header">
+
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title"><i class="fas fa-boxes"></i> Detalle Factura</h3>
+                            </div>
+                            <div class="card-body">
+                                <div class="form-group">
+                                    <label>Buscar Productos</label>
+                                    <div class="input-group">
+                                        <div class="input-group">
+                                            <input type="text" class="form-control" name="search"
+                                                   placeholder="Ingrese una descripción de producto" autocomplete="off">
+                                                   
+                                      
+                                          
+                                        </div>
+                                        <span class="input-group-append">
+                                           
+                                      </span>
+                                    </div>
+                                </div>
+                                <table class="table table-bordered" id="tblProducts">
+                                    <thead>
+                                    <tr>
+                                        <th>Eliminar linea</th>
+                                        <th>Cantidad</th>
+                                        <th>Descripcion Producto</th>
+                                        <th>Precio</th>
+                                        <th>Subtotal</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="card card-secondary">
+                            <div class="card-header">
+                                <h3 class="card-title"><i class="fas fa-shopping-cart"></i>Encabezado Factura</h3>
+                            </div>
+                            <div class="card-body">
+                                <input type="hidden" name="action" value="{{ action }}">
+                                <div class="form-group">
+                                    <label>Fecha de venta:</label>
+                                    {{ form.fecha_venta }}
+                                </div>
+                                <div class="form-group">
+                                    <label>Cliente:</label>
+                                    {{ form.cliente }}
+                                </div>
+                                <div class="form-group">
+                                    <label>colaborador:</label>
+                                    {{ form.colaborador }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Sucursal:</label>
+                                    {{ form.sucursal }}
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label>Total detalle:</label>
+                                    {{ form.subtotal }}
+                                </div>
+
+                                <div class="form-group">
+                                    <label>Total a Pagar:</label>
+                                    {{ form.total }}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-secondary">Guardar</button>
+               <a href="{{ list_url }}" class="btn btn-danger btn-flat">
+                   <i class="fas fa-times"></i> Cancelar
+               </a>
+           
+           
+           
+            </div>
+            <div class="card-footer">
+               
+            </div>
+        </div>
+     
+ 
+    </form>
+
+ 
+
+    
+
+    {% endblock %}

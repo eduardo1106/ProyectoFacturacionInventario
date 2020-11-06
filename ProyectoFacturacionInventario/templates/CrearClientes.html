@@ -1,0 +1,99 @@
+{% extends 'base.html'%}
+{% load static %}
+{% block crearproveedor %}
+<form method="POST">
+    {% csrf_token %}
+    <div class="row fila1 mb-1" >    
+      <div class ="col-lg-8">
+      <div class="card-body">   
+      <div class ="col-lg-11">
+         <div class ="card card-secondary"> 
+            
+            <div class ="card header " style="background-image:url({% static 'img/header2.jpg'%});" > 
+               <h4 class="card-title"></i>Creacion de Clientes</h4>
+             </div>
+      <div class ="card-body"> 
+
+     <div class="row fila7 justify-content-left mb-1" > 
+         <div class =" col-4 columna1   rounded ">    
+            <label for="{{form.prefijo.name}}">{{form.prefijo.label}}</label> 
+         </div>
+         <div class =" col-3 columna2   rounded ">
+            {{form.prefijo }}
+         </div>
+         </div>  
+       
+         <div class="row fila8 justify-content-left mb-1" > 
+            <div class =" col-4 columna1   rounded ">    
+               <label for="{{form2.nombre_persona.name}}">{{form2.nombre_persona.label}}</label>  
+            </div>
+            <div class =" col-6 columna2   rounded ">
+               {{form2.nombre_persona}}
+            </div>
+            </div>   
+      
+        
+            <div class="row fila9 justify-content-left mb-1" > 
+               <div class =" col-4 columna1   rounded ">    
+                  <label for="{{form2.apellido_persona.name}}">{{form2.apellido_persona.label}}</label> 
+               </div>
+               <div class =" col-6 columna2   rounded ">
+                {{form2.apellido_persona}}
+               </div>
+               </div>    
+   
+               <div class="row fila10 justify-content-left mb-1" > 
+                  <div class =" col-4 columna1   rounded ">    
+                     <label for="{{form2.direccion_persona.name}}">{{form2.direccion_persona.label}}</label>
+                  </div>
+                  <div class =" col-6 columna2   rounded ">
+                     {{form2.direccion_persona}}
+                  </div>
+                  </div>   
+        
+                  <div class="row fila11 justify-content-left mb-1" > 
+                     <div class =" col-4 columna1   rounded ">    
+                        <label for="{{form2.nit_persona.name}}" title=" {{form2.help_text.name}}">{{form2.nit_persona.label}}</label>
+                     </div>
+                     <div class =" col-3 columna2 rounded">
+                       {{form2.nit_persona}}
+                                                             
+                     </div>
+                     </div> 
+     
+                     <div class="row fila12 justify-content-left mb-1" > 
+                        <div class =" col-4 columna1   rounded ">    
+                           <label for="{{form2.telefono_persona.name}}">{{form2.telefono_persona.label}}</label>
+                        </div>
+                        <div class =" col-3 columna2   rounded ">
+                           {{form2.telefono_persona}}
+                        </div>
+                        </div> 
+               
+                         
+                        <div class="row fila13 justify-content-center mb-1 mt-5" > 
+                           <div class =" col-3  columna1   rounded ">    
+                             <button type="submit" class="btn btn-secondary">Guardar</button>
+                           </div>
+                           <div class =" col-3  columna2 block-content-end   rounded ">
+                              <button type="reset"  class="btn btn-secondary">Limpiar</button>
+                           </div>
+                           <div class =" col-3  columna2 block-content-end   rounded ">
+                              <a class= "btn btn-secondary" href="{% url 'Index' %}">Regresar</a>
+                           </div>
+                        </div> 
+  
+ 
+       </div>
+   </div> 
+</div>
+</div>
+</div>  
+<div class="col-4 columna4 mt-2">
+   <img src="{% static 'img/clientes.jpg' %}" class="img-fluid rounded float-end" alt="Cinque Terre">
+</div>
+
+
+</div>
+</form>
+{% endblock %}

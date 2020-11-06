@@ -1,0 +1,54 @@
+{%extends 'base.html' %}
+{% block listacolaborador %}
+{% load static %}
+{% csrf_token %}
+
+<div class="row fila1  mb-1 mt-2" >
+    <div class ="col-1 columna1 rounded ">
+  </div> 
+
+ <div class ="col-8 columna2 rounded ">
+  <form class="form-inline my-2 my-lg-6" method="GET">
+      <input class="form-control mr-sm-2" type="text" name="buscar" placeholder="Buscar Colaboradores..">
+      <button class="btn btn-secondary my-2 my-sm-0" type="submit">Buscar</button> 
+  </form>
+  </div>
+</div>
+<table class="table table-bordered "style="background-image:url({% static 'img/fondobusqueda.jpg'%});">
+<thead>
+    <tr>
+        <td><b>Código</b></td>
+        <td><b>Prefijo</b></td>
+        <td><b>DPI</b></td>
+        <td><b>Nombre</b></td>
+        <td><b>Apellido</b></td>
+        <td><b>Direccion</b></td>
+        <td><b>Telefono</b></td>
+        <td><b>Nit</b></td>
+        <td><b>estado</b></td>
+        <td><b>Correo</b></td> 
+        <td><b>Perfil</b></td>
+        <td><b>Acción</b></td>
+    </tr>
+    {% if colaborador %}
+       {% for colaboradores in colaborador %}  
+     <tr>
+        <td>{{colaboradores.id}}</td>
+        <td>{{colaboradores.prefijo}}</td>
+        <td>{{colaboradores.DPI_Colaborador}}</td>
+        <td>{{colaboradores.personas.nombre_persona}}</td>
+        <td>{{colaboradores.personas.apellido_persona}}</td>
+        <td>{{colaboradores.personas.direccion_persona}}</td>
+        <td>{{colaboradores.personas.nit_persona}}</td>
+        <td>{{colaboradores.personas.telefono_persona}}</td>
+        <td>
+          <a class= "btn btn-secondary" href="{% url 'editar_colaboradores'colaboradores.id %}">Modificar</a>
+        </td> 
+      </tr>
+           {% endfor %}
+    {% else %}
+      <h1> No hay registros de solicitudes </h1>
+    {% endif %} 
+</tbody>
+</table>
+{% endblock %}

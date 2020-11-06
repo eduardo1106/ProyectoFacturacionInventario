@@ -1,0 +1,14 @@
+<<<<<<< HEAD
+{
+    "deploy": {
+        "module": "ProyectoFacturacionInventario.wsgi:application"
+    }
+}
+=======
+
+{
+    "deploy": {
+        "module": "ProyectoFacturacionInventario.wsgi:appFactInv"
+    }
+}
+>>>>>>> 19d505f07bea026fbc1fc046bb33a66ddbefd74b
