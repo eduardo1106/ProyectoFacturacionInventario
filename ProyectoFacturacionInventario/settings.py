@@ -30,12 +30,8 @@ SECRET_KEY = '2tac(_=0t6s2@189@88w2*8v)$-r$@qpi+mzqw-ksh&*2kk4$y'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-<<<<<<< HEAD
-ALLOWED_HOSTS = ['*']
-=======
-ALLOWED_HOSTS = ['app_9d6e4214-3aa7-4d24-93d5-c6ae4f25088f.cleverapps.io',]
->>>>>>> 19d505f07bea026fbc1fc046bb33a66ddbefd74b
 
+ALLOWED_HOSTS = ['*']
 
 # Application definition
 
