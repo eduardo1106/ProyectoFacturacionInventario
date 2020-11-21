@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path
-from appFactInv.views import Index,CrearProveedores,EditarProveedores,BuscarProveedores,CrearClientes,CrearTelefonosPersonas,CrearProductos,EditarProductos,BuscarProductos,BuscarProductosDelete,DeleteProducto,CrearColaboradores,BuscarColaboradores,EditarColaboradores,CrearSucursales,DeleteProveedores,BuscarProveedoresDelete,SaleCreateView
+from appFactInv.views import,CrearProveedores,EditarProveedores,BuscarProveedores,CrearClientes,CrearTelefonosPersonas,CrearProductos,EditarProductos,BuscarProductos,BuscarProductosDelete,DeleteProducto,CrearColaboradores,BuscarColaboradores,EditarColaboradores,CrearSucursales,DeleteProveedores,BuscarProveedoresDelete,SaleCreateView
 from django.conf import settings
 from django.conf.urls.static import static
 from django.views.decorators.csrf import csrf_exempt
