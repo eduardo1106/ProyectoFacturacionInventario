@@ -8,7 +8,7 @@ from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.views import LoginView
 
 urlpatterns=[
-    path('index/',Index, name="Index"),
+  #  path('index/',Index, name="Index"),
     
     path('crear_proveedores/',CrearProveedores.as_view(),name="crear_proveedores"),
     path('buscar_proveedores/',BuscarProveedores,name="buscar_proveedores"),
